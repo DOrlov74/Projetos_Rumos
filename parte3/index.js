@@ -1,4 +1,4 @@
-import {stores, pos} from '../data/index.js';
+import {stores, pos} from './data/index.js';
 
 let viewMode=true;  //table mode
 let newItem=false;  //add new stock mode
