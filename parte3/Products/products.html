@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html >
+<html >
+
+<!-- #BeginTemplate "../layout.dwt" -->
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<!-- #BeginEditable "doctitle" -->
+<title>Products</title>
+<!-- #EndEditable -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css"/>
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+<nav class="navbar is-light" role="navigation" aria-label="main navigation">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../default.html">
+        POS
+      </a>
+
+      <a role="button" class="navbar-burger burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div class="navbar-menu" id="navMenu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="/Stores/stores.html">
+          Stores
+        </a>
+        <a class="navbar-item" href="/Stocks/stocks.html">
+          Stocks
+        </a>
+        <a class="navbar-item" href="/Products/products.html">
+          Products
+        </a>
+        <a class="navbar-item">
+          Customers
+        </a>
+        <a class="navbar-item" href="/Sales/sales.html">
+          Sales
+        </a>
+      </div>
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons ">
+            <a class="button is-info is-small">
+              <strong>Sign up</strong>
+            </a>
+            <a class="button is-light is-small">
+              Log in
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </nav>
+  <div class="container content-container">
+    <!-- #BeginEditable "body" -->
+    <div class="top-title">
+      <h1 class="title is-5">Products</h1>
+      <div class="view-options">
+        <p class="view-options__text subtitle is-7">viewmode:</p>
+        <div class="view-options__table"></div>
+        <div class="view-options__card"></div>
+      </div>
+    </div>
+    <div class="table-container  hidden">
+      <table class="table is-fullwidth">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Product Name</th>
+            <th>Barcode</th>
+            <th>Family</th>
+            <th>Unit Measure</th>
+            <th>Qty / Unit</th>
+            <th>Unit Price</th>
+            <th>Discontinued</th>
+            <th>Created at</th>
+            <th>Modified at</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+
+        <tbody class="table__content">
+          <tr class="table__form hidden">
+            <form >
+              <td><input name="id-input" class="id-input input is-small" type="text" placeholder="Id" required></td>
+              <td><input name="product-name-input" class="product-name-input input is-small" type="text" placeholder="Product Name" required></td>
+              <td><input name="barcode-input" class="barcode-input input is-small" type="text" placeholder="barcode"></td>
+              <td>
+                <span class="select">
+                  <select class="family-select select is-small">
+                    
+                  </select>
+                </span>
+              </td>
+              <td><input name="unit-measure-input" class="unit-measure-input input is-small" type="text" placeholder="Unit Measure"></td>
+              <td><input name="quantity-per-unit-input" class="qty-per-unit-input input is-small" type="text" placeholder="Quantity Per Unit"></td>
+              <td><input name="unit-price-input" class="unit-price-input input is-small" type="text" placeholder="Unit Price"></td>
+              <td>
+                <span class="select">
+                  <select class="discontinued-select select is-small">
+                    <option>true</option>
+                    <option>false</option>
+                  </select>
+                </span>
+              </td>
+              <td>
+                <fieldset disabled>
+                  <input name="created-at-input" class="created-at-input input is-small" type="text" placeholder="Created date">
+                </fieldset>
+              </td>
+              <td>
+                <fieldset disabled>
+                  <input name="modified-at-input" class="modified-at-input input is-small" type="text" placeholder="Modified date">
+                </fieldset>
+              </td>
+              <td>
+                <input type="submit" class="submit-input">
+                <div class="submit-button">
+                </div>
+                </input>
+              </td>
+            </form>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="cards-container columns is-multiline">
+      <div class="card-container column is-one-third hidden">
+        <div class="card">
+          <header class="card-header">
+            <p class="card-header-title">
+              Product
+            </p>
+          </header>
+          <div class="card-content">
+            <div class="content">
+              <div class="columns is-mobile content__data">
+                <div class="column is-half content__data__column-1">
+
+                </div>
+                <div class="column is-half content__data__column-2">
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <footer class="card-footer">
+            <div class="card-footer-item card__button-1 card__edit-button"></div>
+            <div class="card-footer-item card__button-2 card__delete-button">Delete</div>
+          </footer>
+        </div>
+      </div>
+    </div>
+
+    <div class="add-button-section">
+      <button class="add-product-button button is-small"></button>
+      <div class="error-container"></div>
+    </div>
+    <!-- #EndEditable -->
+    <script type="module" src="../data/index.js"></script>
+    <script type="module" src="index.js"></script>
+  </div>
+  <footer class="footer ">
+    <div class="content has-text-centered">&copy; Denis Orlov 2020</div>
+  </footer>
+</body>
+
+<!-- #EndTemplate -->
+
+</html>
