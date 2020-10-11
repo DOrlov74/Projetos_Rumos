@@ -1,0 +1,1 @@
+window.location.href = "parte3/default.html";
