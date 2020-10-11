@@ -370,7 +370,7 @@ addButton.addEventListener('click', function(){
     {
         form.classList.toggle('hidden');
         this.classList.toggle('hide-button');
-        this.classList.toggle('add-stock-button');
+        this.classList.toggle('add-pos-button');
         const inputList=form.querySelectorAll('.input');
         inputList.forEach(element => {
             element.addEventListener('blur', validateInput);
