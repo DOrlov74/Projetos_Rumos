@@ -1,0 +1,77 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Part1", "Part1", "{36127D01-4CAE-4538-948B-E937A54591CE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modelo", "Modelo\Modelo.csproj", "{C9E61ED7-EC41-48F4-8E90-0413B1AB0466}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Part2", "Part2", "{CE104149-8782-4C93-8251-4BD35EB96E14}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AcessoDados", "DAL\AcessoDados.csproj", "{918F53D7-664E-4FF4-AF13-0318E4A67B35}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Part3_MongoDB", "Part3_MongoDB", "{484A048F-F69E-49BA-B548-15DF16FAC2C5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MongoDB_WebAPI", "MongoDB_WebAPI\MongoDB_WebAPI.csproj", "{E279C4E3-6927-4F91-BC40-2D6C5BEF6754}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MongoDB_WebAPI_TestProject", "MongoDB_WebAPI_TestProject\MongoDB_WebAPI_TestProject.csproj", "{CC708210-2C58-4333-B3AA-987528F3AE91}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C9E61ED7-EC41-48F4-8E90-0413B1AB0466}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9E61ED7-EC41-48F4-8E90-0413B1AB0466}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9E61ED7-EC41-48F4-8E90-0413B1AB0466}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9E61ED7-EC41-48F4-8E90-0413B1AB0466}.Release|Any CPU.Build.0 = Release|Any CPU
+		{918F53D7-664E-4FF4-AF13-0318E4A67B35}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{918F53D7-664E-4FF4-AF13-0318E4A67B35}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{918F53D7-664E-4FF4-AF13-0318E4A67B35}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{918F53D7-664E-4FF4-AF13-0318E4A67B35}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E279C4E3-6927-4F91-BC40-2D6C5BEF6754}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E279C4E3-6927-4F91-BC40-2D6C5BEF6754}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E279C4E3-6927-4F91-BC40-2D6C5BEF6754}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E279C4E3-6927-4F91-BC40-2D6C5BEF6754}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC708210-2C58-4333-B3AA-987528F3AE91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC708210-2C58-4333-B3AA-987528F3AE91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC708210-2C58-4333-B3AA-987528F3AE91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC708210-2C58-4333-B3AA-987528F3AE91}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C9E61ED7-EC41-48F4-8E90-0413B1AB0466} = {36127D01-4CAE-4538-948B-E937A54591CE}
+		{918F53D7-664E-4FF4-AF13-0318E4A67B35} = {CE104149-8782-4C93-8251-4BD35EB96E14}
+		{E279C4E3-6927-4F91-BC40-2D6C5BEF6754} = {484A048F-F69E-49BA-B548-15DF16FAC2C5}
+		{CC708210-2C58-4333-B3AA-987528F3AE91} = {484A048F-F69E-49BA-B548-15DF16FAC2C5}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0535979C-DF2E-47B7-A1E0-3D82ADF7D857}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://dev.azure.com/denisorlov-2020
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = DAL\\AcessoDados.csproj
+		SccProjectTopLevelParentUniqueName1 = ProjetoDO.sln
+		SccProjectName1 = DAL
+		SccLocalPath1 = DAL
+		SccProjectUniqueName2 = Modelo\\Modelo.csproj
+		SccProjectTopLevelParentUniqueName2 = ProjetoDO.sln
+		SccProjectName2 = Modelo
+		SccLocalPath2 = Modelo
+		SccProjectUniqueName3 = MongoDB_WebAPI\\MongoDB_WebAPI.csproj
+		SccProjectTopLevelParentUniqueName3 = ProjetoDO.sln
+		SccProjectName3 = MongoDB_WebAPI
+		SccLocalPath3 = MongoDB_WebAPI
+		SccProjectUniqueName4 = MongoDB_WebAPI_TestProject\\MongoDB_WebAPI_TestProject.csproj
+		SccProjectTopLevelParentUniqueName4 = ProjetoDO.sln
+		SccProjectName4 = MongoDB_WebAPI_TestProject
+		SccLocalPath4 = MongoDB_WebAPI_TestProject
+	EndGlobalSection
+EndGlobal

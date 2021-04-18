@@ -1,0 +1,265 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 50px; /* Vertically center the text there */
+}
+/*custom styles*/
+
+@font-face {
+    font-family: "Cabin";
+    src: url("../fonts/Cabin-Medium.woff2") format("woff2"), url("../fonts/Cabin-Medium.woff") format("woff"), url("../fonts/Cabin-Medium.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Sarina";
+    src: url("../fonts/Sarina-Regular.woff2") format("woff2"), url("../fonts/Sarina-Regular.woff") format("woff"), url("../fonts/Sarina-Regular.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Montserrat Regular";
+    src: url("../fonts/Montserrat-Regular.woff2") format("woff2"), url("../fonts/Montserrat-Regular.woff") format("woff"), url("../fonts/Montserrat-Regular.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Montserrat Medium";
+    src: url("../fonts/Montserrat-Medium.woff2") format("woff2"), url("../fonts/Montserrat-Medium.woff") format("woff"), url("../fonts/Montserrat-Medium.ttf") format("truetype");
+}
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-10rem);
+    }
+    80% {
+        transform: translateX(1rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(10rem);
+    }
+    80% {
+        transform: translateX(-1rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(10rem);
+    }
+    80% {
+        transform: translateY(-1rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+body {
+    font-family: "Montserrat Regular";
+    font-size: 0.8rem;
+}
+
+/*.home-container {
+    background-image: url("../img/cart.jpg");
+}*/
+.navbar-brand {
+    font-family: "Sarina";
+    font-size: 1.5rem;
+    animation: moveInLeft 2s ease-out;
+    animation-fill-mode: both;
+}
+
+.footer {
+    background-color: hsl(204, 33%, 88%);
+}
+
+.navbar {
+    font-family: "Montserrat Medium";
+    margin-bottom: 1rem;
+    background-color: hsl(204, 33%, 88%);
+}
+.nav-link:hover {
+    transform: translate(2px, 2px);
+    transition: all .2s;
+}
+.menu__cart {
+    content: url("../img/shopping_cart-24px.svg");
+}
+.menu__user {
+    content: url("../img/perm_identity-24px.svg");
+}
+.table {
+    margin-bottom: 0;
+}
+.table td {
+    padding: 0;
+    border-top: none;
+}
+.card {
+    padding: 0;
+    text-align: center;
+    min-width: fit-content;
+}
+.card-header {
+    position: relative;
+}
+.card-header__in-cart {
+    font-size: 0.6rem;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background-color: #FE8961;
+    border-radius: 50%;
+    min-width: 1rem;
+    color: white;
+}
+.card-title {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+}
+.card-body {
+    padding: 1rem;
+}
+.card-body__price {
+    padding-top: 0.75rem;
+    font-size: 1rem;
+    font-family: "Cabin";
+}
+.card-footer {
+    padding: 0;
+    background-color: hsl(204, 33%, 88%);
+}
+.card-btn {
+    padding: .75rem 1.25rem;
+    width: 100%;
+    height: 100%;
+}
+.card-btn__red:hover {
+    background-color: #FFBDA6;
+}
+.card-btn__green:hover {
+    background-color: #95E5BE;
+}
+.card-btn__link, .card-btn__link:hover {
+    color: #212529;
+    text-decoration: none;
+    border: none;
+    background-color: inherit;
+    line-height: normal;
+}
+.jumbotron {
+    padding: 1rem;
+    background-color: #C5E1F3;
+}
+.order-details {
+    font-family: "Montserrat Medium";
+    font-size: 0.8rem;
+    color: #212529;
+}
+.line-details {
+    background-color: #F2F9FE;
+    padding: 0.75rem;
+    margin-top: 1rem;
+    height: fit-content;
+    align-items: center;
+}
+.line-details__title {
+    font-size: 1rem;
+    border-bottom: 2px solid #447DA2;
+}
+    .line-details__title:hover {
+        border-bottom: 2px solid #FEB961;
+    }
+    .line-details__price {
+        text-align: center;
+}
+line-details__delete-btn {
+    content: url("../img/delete_outline-24px.svg");
+}
+.order__payed {
+    color: #FE8961;
+}
+.order__active {
+    color: #44B17C;
+}
+.flex-column {
+    margin: 0 1rem;
+}
+.jumbotron {
+    user-select: none;
+    min-width: 25rem;
+}

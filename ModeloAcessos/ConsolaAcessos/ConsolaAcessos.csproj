@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ModeloAcessos\ModeloAcessos.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="DataBase">
+      <HintPath>..\..\ModeloPOS\DataBase\bin\Debug\netcoreapp3.1\DataBase.dll</HintPath>
+    </Reference>
+    <Reference Include="ModeloPOS">
+      <HintPath>..\..\ModeloPOS\ModeloPOS\bin\Debug\netcoreapp3.1\ModeloPOS.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

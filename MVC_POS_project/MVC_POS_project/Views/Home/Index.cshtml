@@ -1,0 +1,29 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<Customer> SignInManager
+@inject UserManager<Customer> UserManager
+@{
+    ViewData["Title"] = "Home Page";
+    var currentUser = await UserManager.GetUserAsync(User);
+    ViewBag.CurrentUser = currentUser;
+}
+
+    <div class="text-center home-container">
+        <h2 class="home-title">Welcome to our Online Shop</h2>
+        @if (ViewBag.CurrentUser != null)
+        {
+            <p>Select and buy our <a class="nav-link" asp-controller="Products" asp-action="Index">Products</a></p>
+            if (await UserManager.IsInRoleAsync(ViewBag.CurrentUser, "admin"))
+            {
+                <p>Or manage our <a class="nav-link" asp-controller="Customer" asp-action="Index">Customers</a></p>
+            }
+        }
+        else
+        {
+            <p>
+                <a class="nav-link" asp-controller="Customer" asp-action="Login">Login</a>
+                or
+                <a class="nav-link" asp-controller="Customer" asp-action="Register">Register</a>
+                and begin to select products
+            </p>
+        }
+    </div>

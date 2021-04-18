@@ -1,0 +1,148 @@
+﻿@model List<MVC_POS_project.ViewModels.UserOrderViewModel>
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<Customer> SignInManager
+@inject UserManager<Customer> UserManager
+
+@{
+    ViewData["Title"] = "Products";
+    var currentUser = await UserManager.GetUserAsync(User);
+    ViewBag.CurrentUser = currentUser;
+}
+
+<h2>Products</h2>
+
+@if (ViewBag.CurrentUser != null && await UserManager.IsInRoleAsync(ViewBag.CurrentUser, "admin"))
+{
+    <p>
+        <a asp-action="Create">Create New Product</a>
+    </p>
+}
+@*<table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Family)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Price)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CteatedBy)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CteatedAt)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Family.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CteatedBy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CteatedAt)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>*@
+<div class="card-columns d-flex flex-row">
+    @foreach (var item in Model)
+    {
+        <div class="card col-md-6 col-lg-4">
+            <div class="card-header">
+                <h4 class="card-title text-center">@Html.DisplayFor(modelItem => item.Product.Name)</h4>
+                @if (item.Lines.Count() != 0)
+                {
+                    <div class="card-header__in-cart">@item.Lines.FirstOrDefault().Quantity</div>
+                }
+            </div>
+            <div class="card-body">
+                <table class="table table-hover">
+                    <tr>
+                        <td>@Html.DisplayNameFor(model => item.Family.Name)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Family.Name)</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.DisplayNameFor(model => item.Product.Description)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Product.Description)</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.DisplayNameFor(model => item.Product.CteatedBy)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Product.CteatedBy)</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.DisplayNameFor(model => item.Product.CteatedAt)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Product.CteatedAt)</td>
+                    </tr>
+                    <tr>
+                        <td> <span class="card-body__price">@Html.DisplayNameFor(model => item.Product.Price)</span></td>
+                        <td> <span class="card-body__price">@Html.DisplayFor(modelItem => item.Product.Price)</span></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+                @if (ViewBag.CurrentUser != null && await UserManager.IsInRoleAsync(ViewBag.CurrentUser, "admin"))
+                {
+                    <div class="card-btn card-btn__green">
+                        <a class="card-btn__link" asp-action="Edit" asp-route-id="@item.Product.Id">Edit</a>
+                    </div>
+                    <div class="card-btn card-btn__green">
+                        <a class="card-btn__link" asp-action="Details" asp-route-id="@item.Product.Id">Details</a>
+                    </div>
+                    <div class="card-btn card-btn__red">
+                        <a class="card-btn__link" asp-action="Delete" asp-route-id="@item.Product.Id">Delete</a>
+                    </div>
+                }
+                else
+                {
+                    if (item.Orders.Count()!=0)
+                    {
+                        <div class="card-btn card-btn__red">
+                            <a class="card-btn__link" asp-controller="Orders" asp-action="Decrease" asp-route-id="@item.Product.Id">Decrease</a>
+                        </div>
+                        <div class="card-btn card-btn__green">
+                            <a class="card-btn__link" asp-controller="Orders" asp-action="Increase" asp-route-id="@item.Product.Id">Increase</a>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="card-btn card-btn__green">
+                            <form id="@item.Product.Id" method="post" asp-controller="Orders" asp-action="CreateOrder">
+                                <input type="hidden" name="prodId" value="@item.Product.Id" />
+                                <input type="hidden" name="custId" value="@item.Customer.Id" />
+                                <input type="hidden" name="col" value="1" />
+                                <input type="submit" class="card-btn__link" value="Add to cart" />
+                            </form>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+     }
+</div>

@@ -1,0 +1,118 @@
+﻿@model IEnumerable<MVC_POS_project.Models.Order>
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<Customer> SignInManager
+@inject UserManager<Customer> UserManager
+@{
+    ViewData["Title"] = "Orders";
+    var currentUser = await UserManager.GetUserAsync(User);
+    ViewBag.CurrentUser = currentUser;
+}
+
+<h2>Orders</h2>
+@if (ViewBag.CurrentUser != null && await UserManager.IsInRoleAsync(ViewBag.CurrentUser, "admin"))
+{
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+}
+@*<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DocNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CteatedAt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModifiedAt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Paid)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DocNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Customer.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CteatedAt)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ModifiedAt)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Paid)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>*@
+<div class="container">
+    <div class="jumbotron">
+        @foreach (var item in Model)
+        {
+            <div class="d-flex justify-content-between">
+                <div class="d-flex justify-content-start">
+                    <div class="d-flex flex-column order-details">
+                        <div>Order code:</div>
+                        <div>Created:</div>
+                        <div>Total price:</div>
+                    </div>
+                    <div class="d-flex flex-column">
+                        <div>@item.DocNumber</div>
+                        <div>@item.CteatedAt</div>
+                        <div>@item.TotalPrice</div>
+                    </div>
+                </div>
+                <div class="d-flex flex-column order-details">
+                    @if (item.Paid)
+                    {
+                        <div class="order__payed">Payed</div>}
+                    else
+                    {
+                        <div class="order__active">Active</div>}
+                </div>
+            </div>
+            @foreach (var line in item.SaleLines)
+            {
+                <div class="d-flex justify-content-between line-details">
+                    <div class="line-details__title">@line.Product.Name</div>
+                    <div class="d-flex justify-content-end align-items-center line-details__price">
+                        <div class="d-flex flex-column"><div>Quantity:</div><div>@line.Quantity</div></div>
+                        <div class="d-flex flex-column"><div>Unit price:</div><div>@line.UnitPrice</div></div>
+                        <div class="d-flex flex-column"><div>Line price:</div><div>@line.LinePrice</div></div>
+                        <div class="line-details__delete-btn"></div>
+                    </div>
+                </div>
+            }
+            @if (!item.Paid)
+            {
+                <a asp-controller="Products" asp-action="Index">Add product</a>
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            }
+        }
+    </div>
+</div>
